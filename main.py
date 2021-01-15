@@ -11,8 +11,9 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # 本代码用来处理之前得到的台风二维数据
-    file = open()
-
+    file = open("./CMABSTdata/CH1949BST.txt", "r")
+    lines = file.readlines()
+    for line in lines:
+        print(line)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
