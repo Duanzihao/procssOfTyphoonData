@@ -9,12 +9,11 @@ if __name__ == '__main__':
     content = {}
     point_list = []
     name = ''
-    target_file = object()
+    target_file = ''
     for line in lines:
         separate_data = line.split(' ')
         # 清除separate_data中间空的字符串，防止按位读取数据出现错误
         separate_data = [i for i in separate_data if i != '']
-        print(separate_data)
         if separate_data[0] == '66666':
             # 如果字典为空，说明内容还没被写入，此时需要将内容写到字典中
             if not content:
@@ -28,6 +27,7 @@ if __name__ == '__main__':
                 # 这里需要进行将字典转换为JSON再写入文件的操作
                 json_content = json.dumps(content)
                 json.dump(json_content, target_file)
+                print(target_file.name + "已经写好\n")
                 # 将之前的内容置空
                 content = {}
                 point_list = []
