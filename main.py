@@ -25,8 +25,8 @@ if __name__ == '__main__':
             else:
                 content["rows"] = point_list
                 # 这里需要进行将字典转换为JSON再写入文件的操作
-                json_content = json.dumps(content)
-                json.dump(json_content, target_file)
+                # 这里的dump会直接将dict转为json，并写入文件
+                json.dump(content, target_file)
                 print(target_file.name + "已经写好\n")
                 # 将之前的内容置空
                 content = {}
